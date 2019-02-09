@@ -2,8 +2,10 @@ const assert = require('assert');
 
 describe('webdriver.io page', () => {
     it('should have the right title', () => {
-        browser.url('https://webdriver.io');
-        const title = browser.getTitle();
-        assert.equal(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js');
+        //throw Error("regular error")
+        browser.waitUntil(() => {
+            console.log("running waitUntil func at " + new Date())
+            throw Error("error inside waitUntil")
+        })
     });
 });
